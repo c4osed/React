@@ -4,10 +4,9 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h1>App</h1>
-                <MyComponent/>
-                <MyComponent/>
-                <MyComponent/>
+                <MyComponent animal="Bat" isAnimal/>
+                <MyComponent animal="Cat" isAnimal={true}/>
+                <MyComponent animal="Book"/>
             </div>
         );
     }

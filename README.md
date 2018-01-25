@@ -1,18 +1,4 @@
-# 2.Component
-
-## index.js
-```
-import React from 'react';
-import ReactDom from 'react-dom';
-import './index.css'
-import App from './App.js';
-
-const element = <div>
-    <App/>
-</div>
-
-ReactDom.render(element, document.getElementById('root'))
-```
+# 3.Props
 
 ## App.js
 ```
@@ -22,10 +8,9 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h1>App</h1>
-                <MyComponent/>
-                <MyComponent/>
-                <MyComponent/>
+                <MyComponent animal="Bat" isAnimal/>
+                <MyComponent animal="Cat" isAnimal={true}/>
+                <MyComponent animal="Book"/>
             </div>
         );
     }
@@ -40,8 +25,13 @@ import React, {Component} from 'react';
 
 class MyComponent extends Component {
     render() {
+        let {animal, isAnimal} = this.props;
+        animal = "It is a " + animal;
         return (
-            <h1>This is Component</h1>
+            <div>
+                {/* <h1>This is {this.props.animal}</h1> */}
+                <h1>{isAnimal && animal}</h1>
+            </div>
         );
     }
 }
