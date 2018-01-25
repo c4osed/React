@@ -1,4 +1,4 @@
-# 3.Props
+# 4.State
 
 ## App.js
 ```
@@ -8,9 +8,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <MyComponent animal="Bat" isAnimal/>
-                <MyComponent animal="Cat" isAnimal={true}/>
-                <MyComponent animal="Book"/>
+                <MyComponent/>
             </div>
         );
     }
@@ -19,18 +17,27 @@ class App extends Component {
 export default App;
 ```
 
-## MyComponent.js
+## MyComponent
 ```
 import React, {Component} from 'react';
 
 class MyComponent extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            time: 0
+        }
+        setInterval(() => {
+            this.setState({
+                time: this.state.time + 1
+            })
+        }, 1000)
+    }
     render() {
-        let {animal, isAnimal} = this.props;
-        animal = "It is a " + animal;
+        let {time} = this.state
         return (
             <div>
-                {/* <h1>This is {this.props.animal}</h1> */}
-                <h1>{isAnimal && animal}</h1>
+                <h1>{time}</h1>
             </div>
         );
     }
