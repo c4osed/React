@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import './index.css'
+import App from './App.js';
 
 const element = <div>
-    <h1>Hello React</h1>
+    <App/>
 </div>
 
 ReactDom.render(element, document.getElementById('root'))
