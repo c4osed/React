@@ -1,4 +1,4 @@
-# Get Started
+# 1.Get Started
 ## Installation
 ```
 sudo npm install -g create-react-app
