@@ -1,13 +1,36 @@
 import React, {Component} from 'react';
 
 class MyComponent extends Component {
+    constructor(props) {
+        super(props)
+        this.C = this
+            .C
+            .bind(this)
+    }
+    B(b) {
+        alert(b)
+    }
+    C() {
+        alert(this.props.c)
+    }
     render() {
-        let {animal, isAnimal} = this.props;
-        animal = "It is a " + animal;
+        let a = "A";
+        let b = "B";
         return (
             <div>
-                {/* <h1>This is {this.props.animal}</h1> */}
-                <h1>{isAnimal && animal}</h1>
+
+                {alert(a)}
+                <button onClick={() => {
+                    alert(a)
+                }}>A</button>
+
+                {this.B(b)}
+                {/* <button onClick={this.B}>B-1</button> */}
+                <button onClick={() => {
+                    this.B(b)
+                }}>B-2</button>
+
+                <button onClick={this.C}>C</button>
             </div>
         );
     }
