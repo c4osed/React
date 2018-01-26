@@ -1,0 +1,23 @@
+.layout {
+    margin: auto;
+    width: 500px;
+    background: grey;
+    padding: 5px;
+}
+
+.result {
+    background: silver;
+    text-align: right;
+    padding: 5px;
+}
+
+.button {
+    background: silver;
+    padding: 10px;
+    text-align: center;
+    margin: 1%;
+}
+
+.inline {
+    display: inline;
+}
