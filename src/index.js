@@ -4,7 +4,7 @@ import './index.css'
 import Navbar from './Navbar';
 
 const element = <div>
-    <Navbar/>
+    <Navbar hello="Hello"/>
     <h1>Hello React</h1>
 </div>
 
