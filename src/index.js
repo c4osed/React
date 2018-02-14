@@ -1,10 +1,16 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+// import App from './App.js';
 import './index.css'
-import App from './App.js';
+import Loadable from 'react-loadable';
 
-const element = <div>
-    <App/>
-</div>
+// const element = <div>     <App/> </div>
 
-ReactDom.render(element, document.getElementById('root'))
+const LoadableOtherComponent = Loadable({
+    loader: () => import ('./App'),
+    loading: () => <div>Loading...</div>
+});
+
+const MyComponent = () => (<LoadableOtherComponent/>);
+
+ReactDom.render(LoadableOtherComponent, document.getElementById('root'))
